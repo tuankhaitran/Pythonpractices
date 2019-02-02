@@ -8,7 +8,6 @@ def count_primes(num):
     if num <2:
         return 0
 
-    
     x=3
 
     #Loop to check how many prime number exist between x and 'num'
@@ -20,7 +19,7 @@ def count_primes(num):
         else:  #If the break statement never happen then x is a prime so x will be added to 'primes' list
             primes.append(x)
         x+=2
-    return len(primes)
+    return len(primes)+1  #We want to plus 1 to the length because this list will not have number 2 which is also a prime. We can add 2 in the 'primes' list at the beginning so that we dont have to plus 1 here
                 
         
     
