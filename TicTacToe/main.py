@@ -51,6 +51,7 @@ def check_full(board):
 def update_board(myboard,symbol,pos):
     for x,item in enumerate(myboard):
         if x == pos:
+            item=item
             myboard[x]=symbol
     print_board(myboard)    
 
@@ -114,3 +115,5 @@ def tic_tac():
             print("CONGRATULATION PLAYER 1 YOU WON THE GAME")
         elif turn==1:
             print("CONGRATULATION PLAYER 2 YOU WON THE GAME")
+        
+tic_tac()
