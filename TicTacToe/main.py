@@ -53,7 +53,7 @@ def update_board(myboard,symbol,pos):
         if x == pos:
             item=item
             myboard[x]=symbol
-    print_board(myboard)    
+    return myboard    
 
 #FUNCTION THAT CHECK IF THE POSITITION THAT PLAYERS MAKE IS CURRENTLY AVAILABLE    
 def avail_check(board, position):
@@ -88,7 +88,8 @@ def tic_tac():
         while turn ==1:
             move=int(input(f"Player {turn} ! Please make your move!!!!: "))
             if move in range(1,10) and avail_check(myboard,move):
-                update_board(myboard,playermarks[0],move)
+                myboard=update_board(myboard,playermarks[0],move)
+                print_board(myboard)
                 turn=2
                 break
             else:
@@ -98,7 +99,8 @@ def tic_tac():
         while turn ==2:
             move=int(input(f"Player {turn} ! Please make your move!!!!: "))
             if move in range(1,10) and avail_check(myboard,move):
-                update_board(myboard,playermarks[1],move)
+                myboard=update_board(myboard,playermarks[1],move)
+                print_board(myboard)
                 turn=1
                 break
             else:
@@ -115,5 +117,10 @@ def tic_tac():
             print("CONGRATULATION PLAYER 1 YOU WON THE GAME")
         elif turn==1:
             print("CONGRATULATION PLAYER 2 YOU WON THE GAME")
-        
+    
+    rematch=input("Do you want to play again ? y/n ")
+    if rematch.lower() == 'y':
+        tic_tac()
+    else:
+        print("Thanks for playing")
 tic_tac()
