@@ -236,4 +236,11 @@ def play_game():
 
 
     
-play_game()
+while True:
+    play_game()
+    replay=input("Do you want to play again ??? press y for yes, anykey for no: ")
+    if replay[0].lower()!='y':
+        print("Thank you for playing!!!")
+        break
+            
+    
