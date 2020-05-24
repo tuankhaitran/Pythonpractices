@@ -17,14 +17,12 @@
 # We continue to do this for the next pair of points. To do this, we can pop out the first element of the array
 
 points=[[1,1],[3,4],[-1,0]]
-totalsteps=0
-min=0
+sec=0
 while len(points)>1:       
     xdiff=abs(points[1][0]-points[0][0])
     ydiff=abs(points[1][1]-points[0][1])
-    print(xdiff)
-    print(ydiff)
-    min+= max(xdiff,ydiff)
+   
+    sec+= max(xdiff,ydiff)
     print(min)
     points.pop(0)
 
